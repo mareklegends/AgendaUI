@@ -5,10 +5,12 @@
  */
 package agendaui;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JToolTip;
 
@@ -27,6 +29,11 @@ public class Login extends javax.swing.JFrame {
         this.setSize(610, 450);
         this.setLocationRelativeTo(null);
         //ioDatos.Files.rellenar();
+        this.getContentPane().setBackground(new Color(38, 34, 97));
+       jTextFieldUsuario.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+       jPasswordFieldPassword.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+       jButtonLogin.setBackground(Color.WHITE);
+       
        
       
     }
@@ -162,6 +169,7 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
             
         }else if(puedeentrar==0){
+            
             JOptionPane.showMessageDialog(null,"Los datos no son validos");
         }
         

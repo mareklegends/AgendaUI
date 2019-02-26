@@ -5,6 +5,8 @@
  */
 package agendaui;
 
+import java.awt.Color;
+
 /**
  *
  * @author alumno
@@ -19,6 +21,7 @@ public class Dashboard extends javax.swing.JFrame {
         this.setTitle("Dashboard");
         this.setSize(610, 450);
         this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(new Color(38, 34, 97));
     }
     
      public Dashboard(String nombre) {
@@ -27,6 +30,23 @@ public class Dashboard extends javax.swing.JFrame {
         this.setSize(610, 450);
         this.setLocationRelativeTo(null);
         jLabelUsuario.setText(nombre);
+        this.getContentPane().setBackground(new Color(38, 34, 97));
+        
+        jButtonBorrarContacto.setBackground(Color.WHITE);
+       
+       
+       jButtonBuscarContacto.setBackground(Color.WHITE);
+         
+       
+       jButtonListaContactos.setBackground(Color.WHITE);
+       
+       
+       jButtonNuevoContacto.setBackground(Color.WHITE);
+       
+       
+       jButtonSalir.setBackground(Color.WHITE);
+       
+               
     }
 
     /**
@@ -49,6 +69,7 @@ public class Dashboard extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(610, 450));
         setResizable(false);
 
+        jLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUsuario.setText("jLabel1");
 
         jButtonSalir.setText("Salir");
