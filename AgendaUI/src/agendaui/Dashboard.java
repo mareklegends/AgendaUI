@@ -16,6 +16,17 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        this.setTitle("Dashboard");
+        this.setSize(610, 450);
+        this.setLocationRelativeTo(null);
+    }
+    
+     public Dashboard(String nombre) {
+        initComponents();
+        this.setTitle("Dashboard");
+        this.setSize(610, 450);
+        this.setLocationRelativeTo(null);
+        jLabelUsuario.setText(nombre);
     }
 
     /**
@@ -27,22 +38,88 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelUsuario = new javax.swing.JLabel();
+        jButtonSalir = new javax.swing.JButton();
+        jButtonNuevoContacto = new javax.swing.JButton();
+        jButtonBorrarContacto = new javax.swing.JButton();
+        jButtonBuscarContacto = new javax.swing.JButton();
+        jButtonListaContactos = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(610, 450));
         setResizable(false);
+
+        jLabelUsuario.setText("jLabel1");
+
+        jButtonSalir.setText("Salir");
+        jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSalirMouseClicked(evt);
+            }
+        });
+
+        jButtonNuevoContacto.setText("Añadir contacto");
+
+        jButtonBorrarContacto.setText("Borrar contacto");
+        jButtonBorrarContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBorrarContactoActionPerformed(evt);
+            }
+        });
+
+        jButtonBuscarContacto.setText("Buscar contacto");
+
+        jButtonListaContactos.setText("Lista contactos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 589, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonSalir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonNuevoContacto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonBorrarContacto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonBuscarContacto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonListaContactos)
+                        .addGap(0, 121, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 387, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonNuevoContacto)
+                    .addComponent(jButtonBorrarContacto)
+                    .addComponent(jButtonBuscarContacto)
+                    .addComponent(jButtonListaContactos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelUsuario)
+                    .addComponent(jButtonSalir))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseClicked
+       this.setVisible(false);
+       this.dispose();
+    }//GEN-LAST:event_jButtonSalirMouseClicked
+
+    private void jButtonBorrarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarContactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBorrarContactoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +157,11 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBorrarContacto;
+    private javax.swing.JButton jButtonBuscarContacto;
+    private javax.swing.JButton jButtonListaContactos;
+    private javax.swing.JButton jButtonNuevoContacto;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JLabel jLabelUsuario;
     // End of variables declaration//GEN-END:variables
 }
