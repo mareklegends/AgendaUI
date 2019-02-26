@@ -168,8 +168,7 @@ public class Login extends javax.swing.JFrame {
             this.setVisible(false);
             this.dispose();
             
-        }else if(puedeentrar==0){
-            
+        }else if(puedeentrar==0){            
             JOptionPane.showMessageDialog(null,"Los datos no son validos");
         }
         
