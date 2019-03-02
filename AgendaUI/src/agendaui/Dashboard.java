@@ -45,7 +45,7 @@ public class Dashboard extends javax.swing.JFrame {
        
        
        jButtonSalir.setBackground(Color.WHITE);
-       
+        
                
     }
 
@@ -80,6 +80,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButtonNuevoContacto.setText("Añadir contacto");
+        jButtonNuevoContacto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNuevoContactoMouseClicked(evt);
+            }
+        });
 
         jButtonBorrarContacto.setText("Borrar contacto");
         jButtonBorrarContacto.addActionListener(new java.awt.event.ActionListener() {
@@ -100,33 +105,33 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonSalir))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonNuevoContacto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonBorrarContacto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonBuscarContacto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonListaContactos)
-                        .addGap(0, 121, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonNuevoContacto)
+                            .addComponent(jButtonBuscarContacto)
+                            .addComponent(jButtonBorrarContacto)
+                            .addComponent(jButtonListaContactos)
+                            .addComponent(jLabelUsuario))
+                        .addGap(0, 460, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonNuevoContacto)
-                    .addComponent(jButtonBorrarContacto)
-                    .addComponent(jButtonBuscarContacto)
-                    .addComponent(jButtonListaContactos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelUsuario)
-                    .addComponent(jButtonSalir))
+                .addComponent(jLabelUsuario)
+                .addGap(38, 38, 38)
+                .addComponent(jButtonNuevoContacto)
+                .addGap(31, 31, 31)
+                .addComponent(jButtonBorrarContacto)
+                .addGap(26, 26, 26)
+                .addComponent(jButtonBuscarContacto)
+                .addGap(29, 29, 29)
+                .addComponent(jButtonListaContactos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(jButtonSalir)
                 .addContainerGap())
         );
 
@@ -141,6 +146,15 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButtonBorrarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarContactoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonBorrarContactoActionPerformed
+
+    private void jButtonNuevoContactoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNuevoContactoMouseClicked
+        // TODO add your handling code here:
+      Nuevoontacto n = new Nuevoontacto();
+            n.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
+        
+    }//GEN-LAST:event_jButtonNuevoContactoMouseClicked
 
     /**
      * @param args the command line arguments
