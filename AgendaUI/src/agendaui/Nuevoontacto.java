@@ -5,7 +5,10 @@
  */
 package agendaui;
 
+import ioDatos.Contactos;
+import static ioDatos.Files.Contactos;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 
 /**
@@ -14,6 +17,9 @@ import javax.swing.BorderFactory;
  */
 public class Nuevoontacto extends javax.swing.JFrame {
 
+    
+          ArrayList<Contactos> vContactos = ioDatos.Files.Contactos();
+    
     /**
      * Creates new form Nuevoontacto
      */
@@ -46,8 +52,18 @@ public class Nuevoontacto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextFieldNombre.setText("Nombre");
+        jTextFieldNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldNombreMouseClicked(evt);
+            }
+        });
 
         jTextField2.setText("Telefono");
+        jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField2MouseClicked(evt);
+            }
+        });
 
         jButtonEnviar.setText("Guardar datos");
         jButtonEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -57,6 +73,11 @@ public class Nuevoontacto extends javax.swing.JFrame {
         });
 
         jButtonAtras.setText("Salir");
+        jButtonAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAtrasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,8 +127,38 @@ public class Nuevoontacto extends javax.swing.JFrame {
         
         String nombre = jTextFieldNombre.getText();        
         String telefono = jTextField2.getText();
+        Contactos c = new Contactos(nombre, telefono);
+        vContactos.add(c);
+        ioDatos.Files.guardarAgente(vContactos);
+        
+         String nombreapp = "marcos";
+        
+         Dashboard d = new Dashboard(nombreapp);
+            d.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
         
     }//GEN-LAST:event_jButtonEnviarMouseClicked
+
+    private void jTextFieldNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNombreMouseClicked
+        // TODO add your handling code here:
+        jTextFieldNombre.setText("");
+    }//GEN-LAST:event_jTextFieldNombreMouseClicked
+
+    private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked
+        // TODO add your handling code here:
+        jTextField2.setText("");
+    }//GEN-LAST:event_jTextField2MouseClicked
+
+    private void jButtonAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAtrasMouseClicked
+        // TODO add your handling code here:
+        String nombreapp = "marcos";
+        
+         Dashboard d = new Dashboard(nombreapp);
+            d.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
+    }//GEN-LAST:event_jButtonAtrasMouseClicked
 
     /**
      * @param args the command line arguments

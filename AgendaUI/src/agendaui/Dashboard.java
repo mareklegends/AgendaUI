@@ -96,6 +96,11 @@ public class Dashboard extends javax.swing.JFrame {
         jButtonBuscarContacto.setText("Buscar contacto");
 
         jButtonListaContactos.setText("Lista contactos");
+        jButtonListaContactos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonListaContactosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,6 +160,16 @@ public class Dashboard extends javax.swing.JFrame {
             this.dispose();
         
     }//GEN-LAST:event_jButtonNuevoContactoMouseClicked
+
+    private void jButtonListaContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonListaContactosMouseClicked
+        // TODO add your handling code here:
+        
+           Listacontacto n = new Listacontacto();
+            n.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
+        
+    }//GEN-LAST:event_jButtonListaContactosMouseClicked
 
     /**
      * @param args the command line arguments
