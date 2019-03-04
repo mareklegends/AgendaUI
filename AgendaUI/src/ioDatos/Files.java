@@ -103,7 +103,7 @@ public class Files {
               
             leyendoFichero.close();
           } catch (IOException ex) {
-              System.out.println("Error al leer el archivo");
+              System.out.println("Error al leer el archivo, FUNCION METER DATOS");
           } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Files.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -151,7 +151,7 @@ public static ArrayList<Contactos> Contactos(){
               
          
           } catch (IOException ex) {
-              System.out.println("Error al leer el archivo");
+              System.out.println("Fin de lectura del fichero");
           } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Files.class.getName()).log(Level.SEVERE, null, ex);
             }
