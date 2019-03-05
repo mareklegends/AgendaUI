@@ -32,7 +32,7 @@ public class Listacontacto extends javax.swing.JFrame {
         String lista_contactos="";
       
           for (Contactos c : vContactos) {
-              lista_contactos+= " >> "+c.getNombre()+" "+c.getTelefono()+"\n ";
+              lista_contactos+= ">> "+c.getNombre()+" "+c.getTelefono()+"\n";
   
                     
                 }
