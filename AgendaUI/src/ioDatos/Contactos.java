@@ -20,6 +20,9 @@ public class Contactos implements Serializable{
         this.telefono = telefono;
     }
 
+
+    
+
     public String getNombre() {
         return nombre;
     }

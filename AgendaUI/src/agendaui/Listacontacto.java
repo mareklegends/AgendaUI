@@ -17,7 +17,7 @@ import javax.swing.DefaultListModel;
 public class Listacontacto extends javax.swing.JFrame {
 
      ArrayList<Contactos> vContactos;
-     DefaultListModel listModel2;
+ 
     /**
      * Creates new form Listacontacto
      */
@@ -38,13 +38,8 @@ public class Listacontacto extends javax.swing.JFrame {
               
       jLabelResultado.setText(lista_contactos);
       
-      listModel2 = new DefaultListModel();
-      for(int i=0; i<vContactos.size(); i++) {
-    //Añadir cada elemento del ArrayList en el modelo de la lista
-    listModel2.add(i, vContactos.get(i).toString());
-    
-    jList1.setModel(listModel2);
-}
+
+
       
     }
 
