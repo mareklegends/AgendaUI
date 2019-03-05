@@ -33,8 +33,6 @@ public class Listacontacto extends javax.swing.JFrame {
       
           for (Contactos c : vContactos) {
               lista_contactos+= ">> "+c.getNombre()+" "+c.getTelefono()+"\n";
-  
-                    
                 }
            /*     
       jLabelResultado.setText(lista_contactos);
