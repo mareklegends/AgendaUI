@@ -18,7 +18,7 @@ import javax.swing.BorderFactory;
 public class Nuevoontacto extends javax.swing.JFrame {
 
     
-          ArrayList<Contactos> vContactos = ioDatos.Files.Contactos();
+          ArrayList<Contactos> vContactos;
     
     /**
      * Creates new form Nuevoontacto
@@ -28,6 +28,7 @@ public class Nuevoontacto extends javax.swing.JFrame {
           this.setTitle("Añadir nuevo contacto");
         this.setSize(310, 250);
         this.setLocationRelativeTo(null);
+        vContactos = ioDatos.Files.Contactos();
         //ioDatos.Files.rellenar();
         this.getContentPane().setBackground(new Color(38, 34, 97));
  

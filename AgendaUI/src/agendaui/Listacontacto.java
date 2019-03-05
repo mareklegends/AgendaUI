@@ -8,6 +8,7 @@ package agendaui;
 import ioDatos.Contactos;
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -15,8 +16,8 @@ import java.util.ArrayList;
  */
 public class Listacontacto extends javax.swing.JFrame {
 
-     ArrayList<Contactos> vContactos = ioDatos.Files.Contactos();
-    
+     ArrayList<Contactos> vContactos;
+     DefaultListModel listModel2;
     /**
      * Creates new form Listacontacto
      */
@@ -26,6 +27,7 @@ public class Listacontacto extends javax.swing.JFrame {
         this.setSize(610, 450);
         this.setLocationRelativeTo(null);
         //ioDatos.Files.rellenar();
+        vContactos = ioDatos.Files.Contactos();
         this.getContentPane().setBackground(new Color(38, 34, 97));
         String lista_contactos="";
           for (Contactos c : vContactos) {
@@ -35,7 +37,15 @@ public class Listacontacto extends javax.swing.JFrame {
                 }
               
       jLabelResultado.setText(lista_contactos);
- 
+      
+      listModel2 = new DefaultListModel();
+      for(int i=0; i<vContactos.size(); i++) {
+    //Añadir cada elemento del ArrayList en el modelo de la lista
+    listModel2.add(i, vContactos.get(i).toString());
+    
+    jList1.setModel(listModel2);
+}
+      
     }
 
     /**
@@ -82,7 +92,7 @@ public class Listacontacto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonSalir)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
